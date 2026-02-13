@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags -->
+    <title>Situs Batu Kenong Bondowoso - AR Learning</title>
+    <meta name="title" content="Situs Batu Kenong Bondowoso - AR Learning">
+    <meta name="description" content="Jelajahi Situs Batu Kenong Bondowoso dengan teknologi Augmented Reality. Platform pembelajaran interaktif untuk mengenal warisan budaya Indonesia.">
+    <meta name="keywords" content="Batu Kenong, Bondowoso, AR, Augmented Reality, Edukasi, Sejarah, Budaya Indonesia, Situs Megalitikum">
+    <meta name="author" content="AR Learning Platform">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://batu-kenong-ar.vercel.app/">
+    <meta property="og:title" content="Situs Batu Kenong Bondowoso - AR Learning">
+    <meta property="og:description" content="Jelajahi Situs Batu Kenong dengan Augmented Reality">
+    <meta property="og:image" content="https://batu-kenong-ar.vercel.app/preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://batu-kenong-ar.vercel.app/">
+    <meta property="twitter:title" content="Situs Batu Kenong Bondowoso - AR Learning">
+    <meta property="twitter:description" content="Jelajahi Situs Batu Kenong dengan Augmented Reality">
+    <meta property="twitter:image" content="https://batu-kenong-ar.vercel.app/preview.png">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D2691E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Batu Kenong AR">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🗿</text></svg>">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://aframe.io">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- AR Libraries -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"> -->
+<!-- </script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/ar.js@3.4.0/aframe/build/aframe-ar.js"></script> -->
+
+  
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen active">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="stone-icon"><img src="assets/icon.png" alt=""></div>
+            </div>
+            <h1 class="splash-title">SITUS BATU KENONG<br>BONDOWOSO</h1>
+            <p class="splash-subtitle">Jelajahi Sejarah dengan AR</p>
+            <button class="start-btn" id="startBtn">
+                <span>START</span>
+                <div class="btn-glow"></div>
+            </button>
+            <button class="test-btn" id="testBtn">
+                <span>TEST</span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+        <div class="splash-decorations">
+            <div class="floating-stone stone-1">🪨</div>
+            <div class="floating-stone stone-2">🗿</div>
+            <div class="floating-stone stone-3">🏛️</div>
+        </div>
+    </div>
+
+    <!-- Guide Page / Tutorial -->
+    <div id="guide-page" class="content-page">
+        <div class="page-header tutorial-header">
+            <div class="logo-container">
+                <h2>Panduan Penggunaan</h2>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="tutorial-intro">
+                <h3>Selamat Datang di Situs Batu Kenong AR</h3>
+                <p>Ikuti langkah-langkah berikut untuk menjelajahi situs bersejarah ini dalam 3D</p>
+            </div>
+            
+            <div class="guide-section">
+                <div class="guide-number">1</div>
+                <div class="guide-text">
+                    <h3>Jelajahi Model 3D</h3>
+                    <p>Anda akan melihat 6 batu bersejarah dalam tampilan 3D interaktif</p>
+                </div>
+            </div>
+            <div class="guide-section">
+                <div class="guide-number">2</div>
+                <div class="guide-text">
+                    <h3>Tap untuk Informasi</h3>
+                    <p>Sentuh setiap batu untuk menampilkan informasi detail, foto, atau video</p>
+                </div>
+            </div>
+            <div class="guide-section">
+                <div class="guide-number">3</div>
+                <div class="guide-text">
+                    <h3>Navigasi Mudah</h3>
+                    <p>Gunakan tombol navigasi di atas untuk kembali atau ke galeri</p>
+                </div>
+            </div>
+            <button class="primary-btn" id="tryArBtn">Coba Sekarang</button>
+        </div>
+    </div>
+
+    <!-- AR Loading Screen -->
+    <div id="ar-loading" class="ar-loading">
+        <div class="loading-content">
+            <div class="loading-stones">
+                <div class="stone-loader stone-1">🗿</div>
+                <div class="stone-loader stone-2">🗿</div>
+                <div class="stone-loader stone-3">🗿</div>
+            </div>
+            <h3>Memuat Model ...</h3>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Mohon tunggu sebentar</p>
+        </div>
+    </div>
+
+    <!-- AR Page -->
+    <div id="ar-page" class="content-page ar-container">
+        <!-- Fixed Navigation Bar -->
+        <div class="fixed-nav">
+            <button class="nav-btn home-btn left-btn" id="homeBtn">
+                <!-- <span class="nav-icon">🏠</span> -->
+                <span class="nav-label">Home</span>
+            </button>
+            <button class="nav-btn gallery-btn right-btn" id="galleryBtn">
+                <!-- <span class="nav-icon">🖼️</span> -->
+                <span class="nav-label">Galeri</span>
+            </button>
+        </div>
+        
+        <div class="ar-scene-container">
+            <iframe 
+                id="arIframe"
+                src="https://viewer.assemblrworld.com/Embed/-lWKf28aWEzUUsuoHAto"
+                allow="camera; microphone; gyroscope; accelerometer; magnetometer; xr-spatial-tracking; fullscreen"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+
+        <!-- Info Popup -->
+        <div class="info-popup" id="infoPopup">
+            <div class="popup-content">
+                <button class="popup-close" id="popupClose">✕</button>
+                <h3 id="popupTitle"></h3>
+                <div id="popupBody"></div>
+            </div>
+        </div>
+
+        <!-- Instructions Overlay -->
+        <div class="ar-instructions">
+            <p>💡 Sentuh batu untuk melihat informasi</p>
+            <p>🖱️ Drag untuk melihat sekeliling • WASD untuk bergerak</p>
+        </div>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="gallery-page" class="content-page">
+        <!-- Fixed Navigation Bar -->
+        <div class="fixed-nav">
+            <button class="nav-btn home-btn left-btn" id="homeBtn2">
+                <!-- <span class="nav-icon">🏠</span> -->
+                <span class="nav-label">Home</span>
+            </button>
+            <button class="nav-btn ar-btn right-btn" id="arBtn2">
+                <!-- <span class="nav-icon">🗿</span> -->
+                <span class="nav-label">3D View</span>
+            </button>
+        </div>
+        
+        <div class="page-header gallery-header">
+            <h2>Galeri Situs</h2>
+            <p class="gallery-subtitle">Koleksi foto Situs Batu Kenong Bondowoso</p>
+        </div>
+        <div class="page-content">
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="Batu Kenong 1">
+                    <div class="gallery-image"><img src="assets/1.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Batu Kenong 1</h4>
+                        <p>Batu utama situs</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Panorama Situs">
+                    <div class="gallery-image"><img src="assets/2.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Panorama</h4>
+                        <p>Pemandangan luas</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Detail Ukiran">
+                    <div class="gallery-image"><img src="assets/3.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Detail Ukiran</h4>
+                        <p>Motif khas</p>
+                    </div>
+                </div>
+               <div class="gallery-item" data-title="Detail Ukiran">
+                    <div class="gallery-image"><img src="assets/4.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Detail Ukiran</h4>
+                        <p>Motif khas</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Detail Ukiran">
+                    <div class="gallery-image"><img src="assets/5.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Detail Ukiran</h4>
+                        <p>Motif khas</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Detail Ukiran">
+                    <div class="gallery-image"><img src="assets/6.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Detail Ukiran</h4>
+                        <p>Motif khas</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Detail Ukiran">
+                    <div class="gallery-image"><img src="assets/7.jpeg" alt=""></div>
+                    <div class="gallery-overlay">
+                        <h4>Detail Ukiran</h4>
+                        <p>Motif khas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Image Modal -->
+    <div class="image-modal" id="imageModal" aria-hidden="true">
+    <button class="image-modal-close" id="imageModalClose" aria-label="Tutup">×</button>
+
+    <div class="image-modal-content" role="dialog" aria-modal="true">
+        <img id="imageModalImg" alt="">
+        <div class="image-modal-caption">
+        <h4 id="imageModalTitle"></h4>
+        <p id="imageModalDesc"></p>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "batu-kenong-ar-learning",
+  "version": "1.0.0",
+  "description": "Platform pembelajaran interaktif berbasis AR untuk Situs Batu Kenong Bondowoso",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000",
+    "dev": "npx http-server -p 8000 -o",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "ar",
+    "augmented-reality",
+    "education",
+    "learning",
+    "cultural-heritage",
+    "indonesia",
+    "bondowoso",
+    "web-ar",
+    "aframe",
+    "arjs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/batu-kenong-ar"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/batu-kenong-ar/issues"
+  },
+  "homepage": "https://github.com/yourusername/batu-kenong-ar#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
