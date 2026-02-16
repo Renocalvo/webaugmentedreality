@@ -379,12 +379,12 @@ Free to use for educational purposes.
 ### Production Checklist
 - [ ] Test di multiple devices
 - [ ] Optimize images
-- [✅] Setup custom domain
-- [✅] Enable HTTPS
+- [ ] Setup custom domain
+- [ ] Enable HTTPS
 - [ ] Add analytics
 - [ ] Setup error monitoring
 - [ ] Create favicon
-- [✅] Add meta tags for SEO
+- [ ] Add meta tags for SEO
 - [ ] Test AR with physical markers
 - [ ] Add loading states
 
